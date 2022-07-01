@@ -72,12 +72,15 @@ void grainyRect(float x,float y,float myWidth,float myHeight){
 }
 
 void grainyEllipse(float x,float y,float myWidth,float myHeight){
+    push();
+    translate(x,y);
     for (int i=0; i<round(max(myWidth,myHeight)*2f); i++) {
-    float a = i * 2 * PI/round(max(myWidth,myHeight)*2f);
-    float x1 = myWidth * 0.5f * cos(a);
-    float y1 = myHeight * 0.5f * sin(a);
-    grainyPoint(x1, y1);
-  }
+      float a = i * 2 * PI/round(max(myWidth,myHeight)*2f);
+      float x1 = myWidth * 0.5f * cos(a);
+      float y1 = myHeight * 0.5f * sin(a);
+      grainyPoint(x1, y1);
+    }
+    pop();
 }
 
 void grainyCircle(float x,float y,float r){
